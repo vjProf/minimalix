@@ -1,0 +1,10 @@
+/* Reset básico inicial */
+
+
+/* Aplica o estilo a todos os elementos e aos pseudo-elementos ::after e ::before */
+*,
+*::after,
+*::before {
+    /* Define o tamanho para incluir padding, margins e bordas dentro da largura e altura */
+    box-sizing: border-box;
+}
