@@ -8,3 +8,172 @@
     /* Define o tamanho para incluir padding, margins e bordas dentro da largura e altura */
     box-sizing: border-box;
 }
+
+/* Reset padding e margins de elementos em comum */
+body,
+h1,
+h2,
+h3,
+p,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    /* Deixar as imgs responsivas */
+    max-width: 100%;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    /* Remove sublinhado abaixo dos links */
+    text-decoration: none; 
+}
+
+/* _______________________________________________ */
+/* Header (Cabeçalho) */
+
+h1, nav {
+    /* Converte para maiúsculas */
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem; /* 14px (Declarado acima) * 1,5 = 21px */
+}
+
+h1 a {
+    color: white;
+    background-color: black;
+    /* 0.3rem * 14px = 4,2px (cima, baixo) */
+    /* 1rem * 14px = 14px (esquerda, direita) */
+
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+}
+
+header {
+    background-color: white;
+    position: sticky; /* Fixa o Header */
+
+    /* Mudar logo para (Lado direito) */
+    margin-top: 20px;
+
+
+    top:0; /* Ref. para fixar (Obrigatória) */
+    z-index: 9999; /* Garante Header apareça a frente */
+}
+
+header .limitador {
+    display: flex;
+
+    /* Mudar logo para (Lado direito) */
+    /* flex-direction: column; */
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.limitador {
+    max-width: 1100px;
+    width: 95vw; /* vw - View width */
+    margin: auto; /* Centralizar na horizontal */
+}
+
+.menu {
+    list-style: none; /* Tira o estilo da lista (bolinhas) */
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 65%; 
+
+    /* Mudar logo para (Lado direito) */
+    /* margin-top: 10px; */
+
+}
+
+/* Mudar logo para (Lado direito) */
+/* ul {
+    display: flex;
+    justify-content: space-between;
+} */
+
+/* Mudar logo para (Lado direito) */
+/* ul li a {
+    padding-left: 10px;
+} */
+
+
+nav h2 {
+    text-align: right;
+}
+
+h2 a {
+    color: black;
+}
+
+.menu a {
+    color: black;
+    font-weight: bold; /* Negrito */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+
+.menu a:hover, 
+.menu a:active {
+    /* Defini estilos para os links quando o mouse passar por cima (hover) ou quando estão sendo clicados (active) */
+    background-color: gainsboro;
+}
+
+/* ____________________________________________ */
+/* Media queries "Responsividade" */
+
+@media screen and (min-width: 768px) {
+    /* Estilos para telas maiores 768px (Desktop, TV...) */
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .menu a {
+        padding: 0 1rem;
+        border-radius: 15px 0px 15px 0px ;
+    }
+
+    /* Mudar logo para (Lado direito) */
+    /* h1 {
+        margin-top: 10px;
+    } */
+
+    html {
+        font-size: 18px;
+    }
+    header .limitador {
+        height: 15vh;
+
+        /* Mudar logo para (Lado direito) */
+        /* display: flex;
+        flex-direction: row-reverse; */
+
+    }
+    .destaque {
+        height: 85vh;
+    }
+}
