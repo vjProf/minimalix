@@ -142,6 +142,109 @@ h2 a {
     background-color: gainsboro;
 }
 
+/* _________________________________________________________________ */
+/* Conteúdo principal "Main" Área destaque */
+
+.destaque {
+    /* Define o fundo da section com uma imagem e configura o efeito parallax */
+    background-image: url(../imagens/fundo-destaque.jpg);
+    height: 90vh;
+    color: white;
+    background-size: cover; /* Permite que a imagem cubra toda a tela */
+    background-attachment: fixed; /* Cria o efeito parallax */
+    text-align: center; /* Alinha o texto ao centro */
+  
+    /* Flexbox para centralizar conteúdo */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+  }
+  
+  .destaque h2 {
+    /* Define um tamanho de fonte responsivo usando a função clamp */
+    font-size: clamp(2rem, 8vw, 7rem); /* Deixa o texto responsivo */
+    animation-name: fadeIn; /* Cria a animação */
+    animation-duration: 1.5s; /* Duração da animação */
+  }
+  
+  .destaque p {
+    /* Define o tamanho da fonte responsivo para o parágrafo */
+    /* clamp(MIN, IDEAL, MAX) */
+    font-size: clamp(1.6rem, 2vw, 4rem); /* Deixa o texto responsivo */
+    animation: fadeIn 1.5s 1s backwards; /* Animação com atraso */
+  }
+  
+  @keyframes fadeIn {
+    /* Define uma animação chamada 'fadeIn' */
+    
+    /* Estado inicial da animação */
+    from {
+      opacity: 0; /* O elemento começa totalmente transparente */
+    }
+    
+    /* Estado final da animação */
+    to {
+      opacity: 1; /* O elemento termina totalmente opaco */
+    }
+  }
+  
+  /* _________________________________________________________________ */
+  /* Conteúdo Secundário "Section" Área de texto + 3 imagens*/
+  
+  .front-end,
+  .localizacao {
+    /* Centraliza o texto nos elementos com as classes .front-end e .localizacao */
+    text-align: center;
+  }
+  
+  section h2 {
+    /* Centraliza o texto dos h2 dentro das sections e adiciona padding */
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  section p {
+    /* Adiciona padding vertical nos parágrafos dentro das sections */
+    padding: 0.5rem 0;
+  }
+  
+  figure {
+    /* Centraliza o conteúdo das figuras e define margens verticais */
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+/* ____________________________________________ */
+/* Área de história da Internet "Vídeo" */
+
+.historia {
+    background-image: url(../imagens/fundo-madeira.jpg);
+    background-attachment: fixed; /* Cria o efeito parallax */
+    background-size: cover;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.historia h2{
+    color: #fff;
+    text-shadow: #000 1px 1px 2px;
+}
+
+.historia iframe {
+    max-width: 800px;
+}
+
+iframe {
+    width: 100%;
+    border: none;
+    margin-bottom: 130px;
+}
+
+.contato {
+    margin-bottom: 150px;
+}
+
+
 /* ____________________________________________ */
 /* Media queries "Responsividade" */
 
