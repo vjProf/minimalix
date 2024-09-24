@@ -1,282 +1,306 @@
-/* Reset básico inicial */
-
-
-/* Aplica o estilo a todos os elementos e aos pseudo-elementos ::after e ::before */
 *,
 *::after,
 *::before {
-    /* Define o tamanho para incluir padding, margins e bordas dentro da largura e altura */
-    box-sizing: border-box;
+  box-sizing: border-box; /* Reset básico inicial */
 }
 
-/* Reset padding e margins de elementos em comum */
+img {
+  max-width: 100%; /* Deixa todas as imagens responsivas */
+}
+html {
+  font-size: 14px;
+}
 body,
 h1,
 h2,
 h3,
 p,
 figure {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-
-img {
-    /* Deixar as imgs responsivas */
-    max-width: 100%;
-}
-
-html {
-    font-size: 14px;
-}
-
 body {
-    background-color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 a {
-    /* Remove sublinhado abaixo dos links */
-    text-decoration: none; 
+  text-decoration: none; /* Elimina o undeline*/
 }
-
-/* _______________________________________________ */
-/* Header (Cabeçalho) */
-
-h1, nav {
-    /* Converte para maiúsculas */
-    text-transform: uppercase;
+h1,
+nav {
+  text-transform: uppercase; /* Deixa em letras maisculas */
 }
-
 h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: normal;
-    font-size: 1.5rem; /* 14px (Declarado acima) * 1,5 = 21px */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem; /* 14px (Declarado acima) * 1,5 = 26px*/
 }
 
 h1 a {
-    color: white;
-    background-color: black;
-    /* 0.3rem * 14px = 4,2px (cima, baixo) */
-    /* 1rem * 14px = 14px (esquerda, direita) */
-
-    padding: 0.3rem 1rem;
-    border-radius: 5px;
+  color: white;
+  background-color: black;
+  padding: 0.3rem 1rem; /* Relativo a 14px (font-size declarado acima) */
+  border-radius: 5px;
 }
-
 header {
-    background-color: white;
-    position: sticky; /* Fixa o Header */
-
-    /* Mudar logo para (Lado direito) */
-    margin-top: 20px;
-
-
-    top:0; /* Ref. para fixar (Obrigatória) */
-    z-index: 9999; /* Garante Header apareça a frente */
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Para aparecer na frente quando desdobrar o menu Hamburger */
+  /* Obs: Feito oposto jquery z-index: 9998 (Para garantir) */
 }
 
 header .limitador {
-    display: flex;
-
-    /* Mudar logo para (Lado direito) */
-    /* flex-direction: column; */
-
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* Centraliza na vertical */
 }
 
 .limitador {
-    max-width: 1100px;
-    width: 95vw; /* vw - View width */
-    margin: auto; /* Centralizar na horizontal */
+  max-width: 1100px;
+  width: 95vw;
+  margin: auto; /* Centraliza na horizontal */
 }
 
 .menu {
-    list-style: none; /* Tira o estilo da lista (bolinhas) */
-    margin: 0;
-    padding: 0;
-}
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
+}
 nav {
-    width: 65%; 
-
-    /* Mudar logo para (Lado direito) */
-    /* margin-top: 10px; */
-
+  width: 65%;
 }
-
-/* Mudar logo para (Lado direito) */
-/* ul {
-    display: flex;
-    justify-content: space-between;
-} */
-
-/* Mudar logo para (Lado direito) */
-/* ul li a {
-    padding-left: 10px;
-} */
-
 
 nav h2 {
-    text-align: right;
+  text-align: right;
 }
 
+
 h2 a {
-    color: black;
+  color: black;
 }
 
 .menu a {
-    color: black;
-    font-weight: bold; /* Negrito */
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    height: 50px;
-    align-items: center;
+  color: black;
+  font-weight: bold;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
 }
 
-.menu a:hover, 
+.menu a:hover,
 .menu a:active {
-    /* Defini estilos para os links quando o mouse passar por cima (hover) ou quando estão sendo clicados (active) */
-    background-color: gainsboro;
+  background-color: gainsboro;
+  border-radius: 15px 0px 15px 0px;
 }
 
-/* _________________________________________________________________ */
-/* Conteúdo principal "Main" Área destaque */
+/* Esta classe será manipulada via JS */
+.menu-aberto {
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
 
+/* Section com a classe destaque */
 .destaque {
-    /* Define o fundo da section com uma imagem e configura o efeito parallax */
-    background-image: url(../imagens/fundo-destaque.jpg);
-    height: 90vh;
-    color: white;
-    background-size: cover; /* Permite que a imagem cubra toda a tela */
-    background-attachment: fixed; /* Cria o efeito parallax */
-    text-align: center; /* Alinha o texto ao centro */
-  
-    /* Flexbox para centralizar conteúdo */
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-  }
-  
-  .destaque h2 {
-    /* Define um tamanho de fonte responsivo usando a função clamp */
-    font-size: clamp(2rem, 8vw, 7rem); /* Deixa o texto responsivo */
-    animation-name: fadeIn; /* Cria a animação */
-    animation-duration: 1.5s; /* Duração da animação */
-  }
-  
-  .destaque p {
-    /* Define o tamanho da fonte responsivo para o parágrafo */
-    /* clamp(MIN, IDEAL, MAX) */
-    font-size: clamp(1.6rem, 2vw, 4rem); /* Deixa o texto responsivo */
-    animation: fadeIn 1.5s 1s backwards; /* Animação com atraso */
-  }
-  
-  @keyframes fadeIn {
-    /* Define uma animação chamada 'fadeIn' */
-    
-    /* Estado inicial da animação */
-    from {
-      opacity: 0; /* O elemento começa totalmente transparente */
-    }
-    
-    /* Estado final da animação */
-    to {
-      opacity: 1; /* O elemento termina totalmente opaco */
-    }
-  }
-  
-  /* _________________________________________________________________ */
-  /* Conteúdo Secundário "Section" Área de texto + 3 imagens*/
-  
-  .front-end,
-  .localizacao {
-    /* Centraliza o texto nos elementos com as classes .front-end e .localizacao */
-    text-align: center;
-  }
-  
-  section h2 {
-    /* Centraliza o texto dos h2 dentro das sections e adiciona padding */
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  section p {
-    /* Adiciona padding vertical nos parágrafos dentro das sections */
-    padding: 0.5rem 0;
-  }
-  
-  figure {
-    /* Centraliza o conteúdo das figuras e define margens verticais */
-    text-align: center;
-    margin: 1rem 0;
-  }
+  background-image: url(../imagens/fundo-destaque.jpg);
+  height: 90vh;
+  color: white;
+  background-size: cover; /* Permite que a imagem cubra toda a tela Ex_4K */
+  background-attachment: fixed; /* Cria o efeito paralaxe */
+  text-align: center; /* Texto alinhado ao meio */
 
-/* ____________________________________________ */
-/* Área de história da Internet "Vídeo" */
+  display: flex; /* Sem ele aqui não funciona as linhas abaixo */
+  justify-content: center; /* Centraliza o conteudo horizontalmente */
+  align-items: center; /* Centraliza o conteudo verticalmente */
+}
+
+.destaque h2 {
+  /* clamp(MIN, IDEAL, MAX) */
+  font-size: clamp(2rem, 8vw, 7rem); /* Deixa o texto responsivo */
+  animation-name: fadeIn; /* Cria a animação */
+  animation-duration: 1.5s; /* Duração da animação */
+}
+.destaque p {
+  /* clamp(MIN, IDEAL, MAX) */
+  font-size: clamp(1.6rem, 2vw, 4rem); /* Deixa o texto responsivo */
+  animation: fadeIn 1.5s 1s backwards; /* Delay da animação */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.front-end,
+.localizacao {
+  text-align: center;
+}
+section h2 {
+  text-align: center;
+  padding: 1rem;
+}
+
+section p {
+  padding: 0.5rem 0;
+}
+figure {
+  text-align: center;
+  margin: 1rem 0;
+}
 
 .historia {
-    background-image: url(../imagens/fundo-madeira.jpg);
-    background-attachment: fixed; /* Cria o efeito parallax */
-    background-size: cover;
-    text-align: center;
-    padding-bottom: 1rem;
+  background-image: url(../imagens/fundo-madeira.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  padding-bottom: 1rem;
 }
-
-.historia h2{
-    color: #fff;
-    text-shadow: #000 1px 1px 2px;
+.historia h2 {
+  color: #fff;
+  text-shadow: #000 1px 1px 2px;
 }
-
-.historia iframe {
-    max-width: 800px;
-}
-
 iframe {
-    width: 100%;
-    border: none;
-    margin-bottom: 130px;
+  width: 100%;
+  border: none;
+}
+.historia iframe {
+  /* Colocado aqui porque eu quero isso somente no vídeo, não no mapa */
+  max-width: 800px;
 }
 
-.contato {
-    margin-bottom: 150px;
+footer {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  height: 14vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* _________________________________________________________________ */
+/* Media queries */
+
+@media screen and (min-width: 600px) {
+
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .menu a {
+    padding: 0 1rem;
+  }
 }
 
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 18px;
+  }
+  header .limitador {
+    height: 15vh;
+  }
+  .destaque {
+    height: 85vh;
+  }
+}
+/* Formatando Páginas internas */
+.conteudo {
+  background-color: whitesmoke;
+  padding: 0.7rem;
+  border-radius: 7px;
+}
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse; /* junta as bordas */
+}
+table {
+  width: 80%;
+  margin: auto;
+  max-width: 700px;
+}
+th {
+  background-color: #000;
+  color: #fff;
+}
+td {
+  background-color: #fff;
+}
+th,
+td {
+  width: 33%;
+  padding: 0.5rem;
+}
+/* td:first-child (Tambem funcionaria)*/
+td:nth-child(1) {
+  text-transform: uppercase;
+}
+td:nth-child(2) {
+  text-align: center;
+}
+/* td:last-child (Tambem funcionaria)*/
+td:nth-child(3) {
+  color: blue;
+}
 
-/* ____________________________________________ */
-/* Media queries "Responsividade" */
+caption {
+  /* Palavra acima da tabela */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
 
-@media screen and (min-width: 768px) {
-    /* Estilos para telas maiores 768px (Desktop, TV...) */
-    .menu {
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem;
-    }
-    .menu a {
-        padding: 0 1rem;
-        border-radius: 15px 0px 15px 0px ;
-    }
+/* Formatando o formulário */
+form {
+  max-width: 500px;
+  width: 95%;
+  margin: auto;
+  background-color: whitesmoke;
+  padding: 1rem;
+  border-radius: 10px;
+}
 
-    /* Mudar logo para (Lado direito) */
-    /* h1 {
-        margin-top: 10px;
-    } */
+/* Seletor: not() 
+Usado para criar execeções. No exemplo abaixo, vamos formatar todos os inputs, exceto, radio e checkbox */
 
-    html {
-        font-size: 18px;
-    }
-    header .limitador {
-        height: 15vh;
-
-        /* Mudar logo para (Lado direito) */
-        /* display: flex;
-        flex-direction: row-reverse; */
-
-    }
-    .destaque {
-        height: 85vh;
-    }
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  height: 40px;
+  border: none;
+  padding: 2%;
+  box-shadow: rgb(82, 76, 76) 0 0 1px inset;
+}
+textarea {
+  height: auto;
+}
+button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  font-weight: bold;
+  margin-top: 0.2rem;
+}
+button:hover,
+button:focus {
+  background-color: darkblue;
+  cursor: pointer;
+}
+form div {
+  margin-top: 1rem;
 }
